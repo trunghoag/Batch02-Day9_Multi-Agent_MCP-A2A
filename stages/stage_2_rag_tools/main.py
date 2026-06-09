@@ -81,6 +81,16 @@ LEGAL_KNOWLEDGE = [
             "public interest (Winter v. Natural Resources Defense Council, 2008)."
         ),
     },
+    {
+        "id": "labor_law",
+        "keywords": ["labor", "termination", "lao động", "sa thải", "hợp đồng lao động"],
+        "text": (
+            "Theo Bộ luật Lao động Việt Nam 2019, người sử dụng lao động có thể đơn phương "
+            "chấm dứt hợp đồng trong một số trường hợp như người lao động thường xuyên không "
+            "hoàn thành công việc, ốm đau kéo dài, thiên tai/hỏa hoạn hoặc người lao động đủ "
+            "tuổi nghỉ hưu. Việc chấm dứt phải tuân thủ căn cứ và thời hạn báo trước."
+        ),
+    },
 ]
 
 
@@ -135,7 +145,25 @@ def calculate_damages(breach_type: str, contract_value: float) -> str:
     )
 
 
-TOOLS = [search_legal_database, calculate_damages]
+@tool
+def check_statute_of_limitations(case_type: str) -> str:
+    """Check the statute of limitations for a case type.
+
+    Args:
+        case_type: Case type such as contract, tort, property, labor, or trade_secret.
+    """
+    limits = {
+        "contract": "4 years for UCC sale-of-goods claims (UCC § 2-725).",
+        "tort": "Usually 2-3 years depending on state law.",
+        "property": "Often around 5 years, depending on jurisdiction and claim type.",
+        "labor": "Vietnam labor disputes commonly have short statutory windows; verify the specific dispute type under Vietnamese labor law.",
+        "trade_secret": "3 years under the Defend Trade Secrets Act from discovery of misappropriation.",
+    }
+    normalized = case_type.lower().replace("-", "_").replace(" ", "_")
+    return limits.get(normalized, "Unknown case type. Use contract, tort, property, labor, or trade_secret.")
+
+
+TOOLS = [search_legal_database, calculate_damages, check_statute_of_limitations]
 
 QUESTION = "What are the legal consequences if a company breaches a non-disclosure agreement?"
 

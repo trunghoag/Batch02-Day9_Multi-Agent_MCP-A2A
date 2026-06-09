@@ -1,0 +1,29 @@
+[
+  {
+    "doc_id": "pi-cmq4wqgn502mv01qxgnruvs4q",
+    "filename": "luat-phong-chong-ma-tuy-2021.pdf",
+    "path": "D:\\tai lieu gi do\\VinUni\\Group repo\\Day08_RAG_pipeline_cohort2\\data\\landing\\legal\\luat-phong-chong-ma-tuy-2021.pdf",
+    "type": "legal",
+    "raw_response": {
+      "doc_id": "pi-cmq4wqgn502mv01qxgnruvs4q"
+    }
+  },
+  {
+    "doc_id": "pi-cmq4wqj5w02my01qxwaht62mq",
+    "filename": "nghi-dinh-105-2021-huong-dan-luat-phong-chong-ma-tuy.pdf",
+    "path": "D:\\tai lieu gi do\\VinUni\\Group repo\\Day08_RAG_pipeline_cohort2\\data\\landing\\legal\\nghi-dinh-105-2021-huong-dan-luat-phong-chong-ma-tuy.pdf",
+    "type": "legal",
+    "raw_response": {
+      "doc_id": "pi-cmq4wqj5w02my01qxwaht62mq"
+    }
+  },
+  {
+    "doc_id": "pi-cmq4wqlff02mz01qxycn17tyl",
+    "filename": "nghi-dinh-57-2022-danh-muc-chat-ma-tuy-va-tien-chat.pdf",
+    "path": "D:\\tai lieu gi do\\VinUni\\Group repo\\Day08_RAG_pipeline_cohort2\\data\\landing\\legal\\nghi-dinh-57-2022-danh-muc-chat-ma-tuy-va-tien-chat.pdf",
+    "type": "legal",
+    "raw_response": {
+      "doc_id": "pi-cmq4wqlff02mz01qxycn17tyl"
+    }
+  }
+]

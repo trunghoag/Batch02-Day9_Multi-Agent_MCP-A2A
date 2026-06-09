@@ -1,5 +1,26 @@
 # Legal Multi-Agent System with A2A Protocol
 
+## DrugLaw Day 09 Submission
+
+The hands-on Lab 9 submission for the Day 08 DrugLaw RAG artifact is included in
+this repo under `day08_artifact/` and `druglaw_day09/`. See
+[`DRUGLAW_DAY09_HANDS_ON.md`](DRUGLAW_DAY09_HANDS_ON.md) for the rubric mapping,
+shared state schema, MCP-style capability, trace fields, demo commands, and the
+graceful-failure example.
+
+Quick demo:
+
+```bash
+python -m druglaw_day09
+python -m druglaw_day09 --fail-mcp
+python -m unittest tests.test_druglaw_day09 -v
+```
+
+For a fully successful DrugLaw MCP run, set `OPENROUTER_API_KEY`, set
+`PAGEINDEX_API_KEY`, install `pageindex`, and upload PageIndex documents first.
+Without those values, the run fails/degrades explicitly and the trace explains
+the setup error.
+
 A distributed legal advisory system where specialised AI agents collaborate using Google's [Agent-to-Agent (A2A) protocol](https://github.com/google/A2A). Built with **LangGraph**, **LangChain**, and the **a2a-sdk**, the project serves as both a working demo and a hands-on learning path — progressing from a simple LLM API call (Stage 1) to a fully distributed multi-agent network (Stage 5).
 
 ## Architecture

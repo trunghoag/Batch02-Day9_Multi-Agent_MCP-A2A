@@ -172,7 +172,31 @@ def check_compliance_requirements(industry: str, company_size: str) -> str:
     )
 
 
-TOOLS = [search_legal_database, calculate_penalty, check_compliance_requirements]
+@tool
+def search_case_law(keywords: str) -> str:
+    """Search a tiny case-law index by keyword.
+
+    Args:
+        keywords: Keywords such as breach, negligence, contract, privacy, or data.
+    """
+    cases = {
+        "breach": "Hadley v. Baxendale (1854) - consequential damages for breach of contract.",
+        "negligence": "Donoghue v. Stevenson (1932) - modern duty-of-care principle.",
+        "contract": "Carlill v. Carbolic Smoke Ball Co (1893) - unilateral contract formation.",
+        "privacy": "Carpenter v. United States (2018) - privacy expectations in digital data.",
+        "data": "FTC v. Wyndham Worldwide Corp. (2015) - FTC authority over unreasonable data security.",
+    }
+    query = keywords.lower()
+    matches = [case for key, case in cases.items() if key in query]
+    return "\n".join(matches) if matches else "No matching case law found."
+
+
+TOOLS = [
+    search_legal_database,
+    calculate_penalty,
+    check_compliance_requirements,
+    search_case_law,
+]
 
 QUESTION = (
     "A tech startup with $5M revenue was caught sharing user data without consent "
@@ -183,7 +207,8 @@ SYSTEM_PROMPT = (
     "You are a legal analyst agent. You have access to tools for searching legal databases, "
     "calculating penalties, and checking compliance requirements. Use these tools to build "
     "a comprehensive analysis. Search for each legal area separately — data privacy, tax, "
-    "and compliance. Keep your final answer under 500 words."
+    "and compliance. Use search_case_law when precedent would clarify the answer. "
+    "Keep your final answer under 500 words."
 )
 
 

@@ -29,4 +29,7 @@ packages = [
     "tax_agent",
     "compliance_agent",
     "stages",
+    "day08_artifact",
+    "day08_artifact.src",
+    "druglaw_day09",
 ]

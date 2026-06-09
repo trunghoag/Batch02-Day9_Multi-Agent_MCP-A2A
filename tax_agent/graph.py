@@ -32,6 +32,9 @@ When answering, be precise about:
 
 Always note that your response is for educational purposes and the user
 should consult a licensed attorney for specific legal advice.
+
+Keep responses concise: use short sections, avoid repeating facts already in
+the question, and STAY UNDER 50 WORDS strictly. DO NOT hallucinate.
 """
 
 
